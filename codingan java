@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n;
+        double total = 0.0;
+        final int passScore = 70;
+        
+        System.out.print("Masukkan jumlah mahasiswa: ");
+        n = input.nextInt();
+        
+        double[] nilai = new double[n];
+        
+        for (int i = 0; i < n; i++) {
+            System.out.print("Masukkan nilai mahasiswa ke-" + (i+1) + ": ");
+            nilai[i] = input.nextDouble();
+            total += nilai[i];
+        }
+        
+        double rataRata = total / n;
+        
+        System.out.println("Rata-rata nilai mahasiswa: " + rataRata);
+        
+        if (rataRata >= passScore) {
+            System.out.println("Selamat, mahasiswa lulus!");
+        } else {
+            System.out.println("Maaf, mahasiswa tidak lulus.");
+        }
+        
+        input.close();
+    }
+}
